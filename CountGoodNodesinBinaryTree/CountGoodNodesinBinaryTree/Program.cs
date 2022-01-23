@@ -2,19 +2,16 @@
 {
     public static void Main()
     {
-        TreeNode root3 = new(3);
-        TreeNode root1 = new(1);
-        TreeNode root5 = new(5);
-        TreeNode root4 = new(4, root1, root5);
-        TreeNode root1a = new(1, root3);
-        TreeNode root3a = new(3, root1a, root4);
-        GoodNodes(root3a);
+        TreeNode root3a = new(3, new(1, new(3)), new(4, new(1), new(5)));
+        Console.WriteLine("Teste 1- " + (GoodNodes(root3a) == 4 ? "Correto" : "Errado"));
     }
 
     public static int GoodNodes(TreeNode root)
     {
-        List<int> listCaminho = new();
-        listCaminho.Add(root.val);
+        List<int> listCaminho = new()
+        {
+            root.val
+        };
         return IsGoodNode(root, listCaminho);
     }
 
