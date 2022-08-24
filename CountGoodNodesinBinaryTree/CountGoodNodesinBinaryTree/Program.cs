@@ -11,9 +11,9 @@
         public static int GoodNodes(TreeNode root)
         {
             var listCaminho = new List<int>()
-        {
-            root.val
-        };
+            {
+                root.val
+            };
             return IsGoodNode(root, listCaminho);
         }
 
